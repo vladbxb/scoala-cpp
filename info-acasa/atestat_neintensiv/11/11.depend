@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681081600 source:/home/vlad/school_cpp/atestat_neintensiv/11/main.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+

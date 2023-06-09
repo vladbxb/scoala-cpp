@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681322452 source:/home/vlad/school_cpp/atestat_intensiv/14/main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+

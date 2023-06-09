@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1677869811 source:/home/vlad/school_cpp/cstring_bac_7/main.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+

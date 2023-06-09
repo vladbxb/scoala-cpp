@@ -1,0 +1,171 @@
+s1
+1d
+
+f 2023
+f 202 * 10 + 2
+f 20 * 10 + 3
+f 2 * 10 + 2
+f 0 * 10 + 3
+ret 0
+
+b. 3232
+
+2b
+
+3a 
+
+4d
+
+5b
+
+
+s2
+1a: 774
+
+1b:
+
+1c:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int n,x,cn,c,p;
+	cin >> n;
+	x = 5;
+	do {
+		cn = n;
+		n = 0;
+		p = 1;
+		do {
+			c = cn % 10;
+			if (c == x) {
+				c = 5 - c;
+			}
+			n = c * p + n;
+			cn = cn / 10;
+			p = p * 10;
+		} while (cn != 0);
+		x = x - 1;
+	} while (x != 0);
+	cout << n;
+}
+
+1d: 
+
+citeste n
+(numar natural)
+x <- 5
+|pentru x <- 5, x > 0, x <- x - 1 executa
+|cn <- n; n <- 0; p <- 1
+||repeta
+||c <- cn % 10
+|||daca c=x atunci c <- 5 - c
+|||.
+||n <- c*p+n; cn <- [cn/10]; p <- p*10
+||pana cand cn = 0
+|x <- x-1
+|.
+scrie n
+
+2. (6, 5) (6, 7) (4, 5)
+
+3.
+
+for (i=1; i<=5; i++) {
+        for (j=1; j<=5; j++) {
+            a[i][j] = 5 - j;
+            if (a[i][j] < i) {
+                a[i][j] = i - 1;
+            }
+    	}
+}
+
+s3
+
+1.
+
+void NrImp(int x, int y, int &nr) {
+    int div=0;
+    for (int i=x; i<=y; i++) {
+        for (int j=1; j<=i; j++) {
+            if (i % j == 0 && j % 2 != 0) {
+                div++;
+            }
+        }
+        if (div == 3) {
+            nr++;
+        }
+        div = 0;
+    }
+}
+
+2.
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[101] =;
+    
+    char *p = strtok(a, " ");
+    
+    while (p != NULL) {
+        if (strchr(p, '.')) {
+            if (p[0] == 'F') {
+                cout << "fam. ";
+            }
+            if (p[0] == 'G') {
+                cout << "gen. ";
+            }
+            if (p[0] == 'S') {
+                cout << "spe. ";
+            }
+        } else {
+            cout << p << " ";
+        }
+        p = strtok(NULL, " ");
+    }
+    return 0;
+}
+
+3a.
+
+Programul primeste un sir de numere naturale si pastreaza in memorie numarul maxim din sir. Cand parcurgem sirul din fisier, conditiile exercitiului se indeplinesc pentru fiecare iteratie, caci programul va verifica intotdeauna fata de pasii anteriori, afisand pasii reprezentativi. Atunci cand gasim mai multe numere egale, se pastreaza o variabila booleana care se activeaza atunci cand este gasit un numar mai mic ca maximul, adica un pas nereprezentativ de dinaintea numarului. Folosim aceasta variabila pentru a prinde numarul egal cu maximul intr-o conditie unde este afisat daca si numai daca numarul din sir de dinaintea lui este nereprezentativ, astfel incat este afisat doar primul pas dintr-o secventa de pasi egal cu maximul. Eficienta lui este liniara, din moment ce verificam toate numerele dintr-un sir, timpul de executare al programului se largeste cu cat sunt mai multe numere temperatura in sir.
+
+3b.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream fin("bac.txt", ios::in);
+
+    int nr, maxim=0, i=1;
+    bool found = false;
+
+    while (!fin.eof()) {
+        fin >> nr;
+        if (nr > maxim) {
+            maxim = nr;
+            cout << i << " ";
+            found = false;
+        } else if (nr == maxim && found == true) {
+            cout << i << " ";
+            found = false;
+        } else if (nr < maxim) {
+            found = true;
+        }
+        i++;
+    }
+
+    fin.close();
+    return 0;
+}

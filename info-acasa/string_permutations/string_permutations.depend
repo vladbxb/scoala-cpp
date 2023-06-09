@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1677616880 source:/home/vlad/school_cpp/string_permutations/main.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+

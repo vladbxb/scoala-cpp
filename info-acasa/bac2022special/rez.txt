@@ -1,0 +1,151 @@
+s1
+
+1d
+
+2c
+
+3a
+
+4c
+
+5a
+
+s2
+
+1a: 4 12 
+1b. 1729, 1723
+1c.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int n,x,p;
+	cin >> n;
+	while (n>10) {
+		x = n % 100;
+		if (x > 1) {
+			p = (x % 2)  * (x % 3) * (x % 5) * (x % 7);
+			if (p != 0) {
+				cout << x << ' ';
+			}
+		}
+		n = (int) (n / 10);
+	}
+	return 0;
+}
+
+
+1d. nu stiu :(
+
+2. [1, 2], [1, 3], [2, 3], [1, 5], [3, 5], [2, 5]
+
+3. 
+
+#include <iostream>
+
+using namespace std;
+
+struct sala
+{ int nrLocuri;
+  int pret;
+} t[15];
+
+int main() {
+	int i, s=0;
+	for (i=0; i<15; i++) {
+		s += t[i].nrLocuri * t[i].pret;
+	}
+	return 0;
+}
+
+s3
+
+1. 
+
+void patrate(int n, int &x, int &y) {
+	bool found = false;
+	for (int i=1; i*i <= n; i++) {
+		for (int j=1; j*j <= n; j++) {
+			if (i*i * j*j == n && i >= 2 && j > i) {
+				found = true;
+				x = i;
+				y = j;
+				i = n + 1;
+				j = n + 1;
+			}
+		}
+	}
+	if (!found) {
+		x = 0;
+		y = 0;
+	}
+}
+
+2.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int n;
+	cin >> n;
+	int a[n][n];
+	for (int i=0; i<n; i++) {
+		for (int j=0; j<n; j++) {
+			cin >> a[i][j];
+		}
+	}
+	for (int i=0; i<n; i++) {
+		for (int j=0; j<n; j++) {
+			if (i != j) {
+				cout << a[i][j] << " ";
+			}
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
+
+3a. Programul citeste si memoreaza sirul de numere din fisier intr-o matrice unidimensionala. Acesta foloseste o iteratie dubla care se ocupa de numararea secventelor progresive din fisier. Pentru fiecare numar distinct, acesta tine minte in memorie de cate ori a aparut consecutiv pana cand numarul se schimba. Apoi, se face o verificare pentru a vedea daca numarul respectiv intradevar apartine unei secvente progresive si adauga unei lungimi maxime, care se reseteaza in cazul in care conditia de a fi secventa progresiva nu se indeplineste pentru respectivul numar. Asadar, in scopul eficientei programului, urmatoarea verificare a secventei progresive se ia de la locatia in care s-a schimbat numarul distinct, ceea ce mai salveaza niste timp, aceste iteratii fiind intr-o relatie simbiotica, cu verificari inlantuite. 
+
+3b.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+	ifstream fin("bac.txt",ios::in);
+	int nr=0, i, j, counter=0, lungime=0, maxim=0;
+	int a[1000000];
+	fin >> a[nr];
+	while (!fin.eof()) {
+		nr++;
+		fin >> a[nr];
+	}
+	for (i=0; i<nr; i = j) {
+		for (j=i; a[j] == a[i]; j++) {
+			counter++;
+		}
+		if (counter == a[i]) {
+			lungime += a[i];
+		} else {
+			lungime = 0;
+		}
+		counter = 0;
+		if (maxim < lungime) {
+			maxim = lungime;
+		}
+	}
+
+	cout << maxim;
+
+	fin.close();
+	return 0;
+}
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681983230 source:c:\users\vlad.preotesoiu\downloads\intensiv\19\main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+

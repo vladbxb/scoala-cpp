@@ -1,0 +1,56 @@
+s1
+
+1. nu cred ca e niciuna dar probabil e a
+2. d
+3. b
+4. c
+5. d
+
+s2
+
+1a. s = 3
+
+1b. 
+pe astea nu stiu sa le fac :(
+
+1c.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    short m,n,p,q;
+    cin >> m >> n >> p >> q;
+    short s = 0;
+    for (int x = p; x <= q; x++) {
+        if (x % m == 0 || x % n == 0) {
+            s = s + x;
+        }
+        if (x % m == 0 && x & n == 0) {
+            s = s - x;
+        }
+    }
+    cout << s;
+}
+
+d) 
+
+citeste m,n,p,q
+
+s <- 0
+
+x <- p
+
+cattimp x <= q executa
+...
+
+
+2. 
+
+#include <iostream>
+
+using namespace std;
+
+struct echipa
+

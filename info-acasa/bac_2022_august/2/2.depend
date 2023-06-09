@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1680800190 source:/home/vlad/school_cpp/bac_2022_august/2/main.cpp
+	<iostream>
+	<cstring>
+

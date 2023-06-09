@@ -1,0 +1,158 @@
+s1
+
+1. c
+2. d
+3. a
+4. c
+5. d
+
+s2
+
+1a. 4
+1b. 10, 15
+1c.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double n;
+    cin >> n;
+    double i=2, k=0;
+    while (n >= i) {
+        while (n % i == 0) {
+            k = k + 1;
+            n = (int) (n/i);
+        }
+        if (i == 2) {
+            i = i + 1;
+        } else {
+            i = i + 2;
+        }
+    }
+    cout << k;
+}
+
+d. :(
+
+2. 2022, 2023
+
+3. 
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main() {
+    char s[51];
+    char id[55];
+    cin.getline(s, 51);
+    strcpy(id, strchr(s, ' ') + 1);
+    strcat(id, "2022");
+    cout << id;
+}
+
+s3
+
+1. 
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+void secventa(int &n) {
+        int temp = n, badIndex=1;
+        bool found = false;
+        while (temp > 0) {
+                if (!found && temp % 10 == 2) {
+                        found = true;
+                } else if (found && temp % 10 == 2) {
+                        n -= 2 * badIndex / 10; 
+                        found = false;
+                }
+                badIndex *= 10; 
+                temp /= 10; 
+        }
+}
+
+int main() {
+        int n = 202233228;
+        secventa(n);
+        cout << n;
+        return 0;
+}
+
+2.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int m, n, min=11, sum=0;
+	cin >> m >> n;
+	int a[m][n];
+
+	for (int i=0; i<m; i++) {
+		for (int j=0; j<n; j++) {
+			cin >> a[i][j];
+		}
+	}
+
+	for (int i=0; i<m; i++) {
+		for (int j=0; j<n; j++) {
+			if (a[i-1][j] < min && a[i-1][j] <= 10) {
+				min = a[i-1][j];
+			}
+			if (a[i][j-1] < min && a[i][j-1] <= 10) {
+				min = a[i][j-1];
+			}
+			if (a[i+1][j] < min && a[i+1][j] <= 10) {
+				min = a[i+1][j];
+			}
+			if (a[i][j+1] < min && a[i][j+1] <= 10) {
+				min = a[i][j+1];
+			}
+
+			if (a[i][j] < min) {
+				sum += min - a[i][j];
+			}
+			min = 11;
+		}
+	}	
+    cout << sum;
+	return 0;
+}
+
+3a. Programul parcurge sirul de caractere de fisier tinand in memorie numarul precedent. Daca membrul sirului indeplineste conditia sa fie in intervalul [x,y] si sa nu fie egal cu numarul precedent (pentru a numara fiecare numar distinct o singura data) atunci incrementeaza variabila rezultat. Eficienta programului este foarte buna, deoarece este foarte scurt, conditiile sunt scrise astfel incat sa nu necesite calcul si sunt tinute minte putine variabile.
+
+3b.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+	int x, y, prev, amount=0, nr;
+	ifstream fin("bac.txt", ios::in);
+	fin >> x >> y;
+	prev = x - 1;
+	fin >> nr;
+	while (!fin.eof()) {
+		if (nr >= x && nr <= y && nr != prev) {
+			amount++;
+		}
+		prev = nr;
+		fin >> nr;
+	}
+
+	cout << amount;
+
+	fin.close();
+	return 0;
+}
+
+

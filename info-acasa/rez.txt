@@ -1,0 +1,203 @@
+s1
+
+1. nu cred ca e niciuna dar probabil e a
+2. d
+3. b
+4. c
+5. d
+
+s2
+
+1a. s = 3
+
+1b. 
+pe astea nu stiu sa le fac :(
+
+1c.
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    short m,n,p,q;
+    cin >> m >> n >> p >> q;
+    short s = 0;
+    for (int x = p; x <= q; x++) {
+        if (x % m == 0 || x % n == 0) {
+            s = s + x;
+        }
+        if (x % m == 0 && x & n == 0) {
+            s = s - x;
+        }
+    }
+    cout << s;
+}
+
+d) 
+
+citeste m,n,p,q
+
+s <- 0
+
+x <- p
+
+cattimp x <= q executa
+...
+
+
+2. 
+#include <iostream>
+
+using namespace std;
+
+struct echipa
+{
+        char nume[50];
+        int rezultat;
+};
+struct echipa c[3];
+
+int main() {
+        int i, maremax, maremid, marelow;
+
+        if (c[0].rezultat > c[1].rezultat) {
+                maremid = 0;
+                marelow = 1;
+        } else {
+                maremid = 1;
+                marelow = 0;
+        }
+
+        if (c[maremid].rezultat < c[2].rezultat) {
+                maremax = 2;
+        } else {
+                maremax = maremid;
+                maremid = 2;
+        }
+
+        cout << c[maremax].nume << " " << c[maremid].nume << " " << c[marelow].nume;
+
+
+        return 0;
+}
+
+3. 7fantaufistic
+
+s3
+
+1.
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+bool DoiTrei(int n) {
+    bool doisautrei = true;
+    while (n > 0) {
+        if (n % 10 != 2 && n % 10 != 3) {
+            doisautrei = false;
+        }
+        n /= 10; 
+    }   
+    return doisautrei;
+}
+
+int main() {
+        int n=2023;
+        cout << DoiTrei(n);
+        return 0;
+}
+
+2.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+int main() {
+        int n;
+        cin >> n;
+        int a[n][n];
+        for (int i=0; i<n; i++) {
+                for (int j=0; j<n; j++) {
+                        cin >> a[i][j];
+                }
+        }
+
+        bool valid = true;
+
+        for (int i=0; i<n; i++) {
+                for (int j=0; j<n; j++) {
+                        if (a[i][j] == 3) {
+                                if (a[i+1][j] == 0) {
+                                        valid = false;
+                                } else if (a[i][j+1] == 0) {
+                                        valid = false;
+                                } else if (a[i-1][j] == 0) {
+                                        valid = false;
+                                } else if (a[i][j-1] == 0) {
+                                        valid = false;
+                                }
+                                if (valid) {
+                                        cout << i + 1 << " ";
+                                }
+                                valid = true;
+                        }
+                }
+        }
+        return 0;
+}
+
+
+3a.
+
+Programul construieste un tablou bidimensional in memorie cu datele din fisier pentru a putea parcurge tabloul mai usor. Apoi, itereaza prin cele doua jumatati, pentru a verifica fiecare numar din sir daca este p ordonat. Eficienta programului este data de un nested for loop, care poate fi comparata cu o parcurgere a unui tablou bidimensional, cu un timp de executie destul de bun. In rest, pe fiecare pereche este utilizata functia pOrdonat, care mai adauga putina complexitate.
+
+3b.
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+bool pOrdonat(int x, int y) {
+	if (x % 2 != y % 2 && x > y) {
+		return true;
+	}
+	if (x % 2 == y % 2) {
+		return true;
+	}
+	return false;
+}
+
+int main() {
+	ifstream fin("bac.txt", ios::in);
+	
+	int n, nr1, nr2;
+	bool p_ordonat = true;
+	fin >> n;
+	int a[2*n];
+
+	for (int i=0; i<2*n; i++) {
+		fin >> a[i];
+	}
+	fin.close();	
+	for (int i=0; i<n; i++) {
+		for (int j=n; j<2*n; j++) {
+			if (!pOrdonat(a[i], a[j])) {
+				p_ordonat = false;
+			}
+		}
+	}
+	
+	if (p_ordonat) {
+		cout << "DA";
+	} else {
+		cout << "NU";
+	}
+
+	return 0;
+}
+

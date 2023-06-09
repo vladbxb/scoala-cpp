@@ -1,0 +1,2 @@
+&y = x // alt nume pt x
+y = &x // tine minte locul unde e x

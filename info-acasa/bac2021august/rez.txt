@@ -1,0 +1,113 @@
+s1
+1. d
+2. b
+3. c
+4. c
+5. d
+
+s2
+1a. 3 4 6 8 9
+1b. 1 1 1, 2 1 1
+1c.
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int n,x,y,ok;
+	ok = 0;
+	for (int i=1; i<n; i++) {
+		if ((i % x == 0 && i % y != 0) || (i % x != 0 && i % y == 0)) {
+			cout << i << " ";
+			ok = 1;
+		}
+	}
+	if (!ok) {
+		cout << "0";
+	}
+	return 0;
+}
+
+1d. 
+citeste n,x,y
+ok <- 0
+i <- 1
+cat timp i != n executa
+	daca (i%x=0 si i%y!=0) sau
+	     (i%x!=0 si i%y=0) atunci
+	  scrie i, ' '
+	  ok <- 1
+	.
+.
+daca ok=0 atunci scrie 0
+.
+
+2.
+ARMONIA
+
+3.
+#include <iostream>
+
+using namespace std;
+
+struct date
+	{ char CNP[14];
+	  int anNastere;
+	};
+struct angajat
+	{ struct date dp;
+	  int venit;
+	}a[30];
+
+int main() {
+	a[0].dp.anNastere = 2000;
+	a[0].venit = 4000;
+	return 0;
+}
+
+s3.
+
+1. 
+void cuburi(int n) {
+        for (int i=n; i>=1; i--) {
+                cout << i * i * i << " ";
+        }
+}
+
+3.
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+bool asemenea(int x, int y) {
+	if ((x % 10 == (y / 10) % 10 && (x / 10) % 10 == y % 10) || (x % 10 == y % 10 && (x / 10) % 10 == (y / 10) % 10)) {
+		return true;
+	}
+	return false;
+}
+
+int main() {
+	int na, nb, suma = 0;
+	ifstream fin("numere.in", ios::in);
+	fin >> na >> nb;
+	int s1[na];
+	int s2[nb];
+	for (int i=0; i<na; i++) {
+		fin >> s1[i];
+	}
+	for (int i=0; i<nb; i++) {
+		fin >> s2[i];
+	}
+	for (int i=0; i<na; i++) {
+		for (int j=0; j<nb; j++) {
+			if (asemenea(s1[i], s2[j])) {
+				suma++;
+			}
+		}
+	}
+	
+	cout << suma;
+	fin.close();
+}

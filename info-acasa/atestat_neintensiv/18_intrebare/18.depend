@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1681742044 source:/home/vlad/school_cpp/atestat_neintensiv/18_intrebare/main.cpp
+	<iostream>
+	<cmath>
+	<fstream>
+
