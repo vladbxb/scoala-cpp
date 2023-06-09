@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1676455951 source:c:\users\vlad.preotesoiu\downloads\good_or_bad\main.cpp
+	<iostream>
+	<cstring>
+

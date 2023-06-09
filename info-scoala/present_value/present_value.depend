@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669626310 source:c:\users\vlad.preotesoiu\downloads\present_value\main.cpp
+	<iostream>
+	<cmath>
+

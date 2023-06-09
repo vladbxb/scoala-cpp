@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1675245593 source:c:\users\vlad.preotesoiu\downloads\playing_with_cstring\main.cpp
+	<iostream>
+	<cctype>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1676365554 source:c:\users\vlad.preotesoiu\downloads\capitalizer\main.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+

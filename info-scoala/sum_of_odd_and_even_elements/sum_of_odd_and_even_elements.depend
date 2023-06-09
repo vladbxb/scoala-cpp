@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1665487181 source:c:\users\vlad.preotesoiu\downloads\sum_of_odd_and_even_elements\main.cpp
+	<iostream>
+	<cmath>
+

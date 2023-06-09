@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1675332026 source:c:\users\vlad.preotesoiu\downloads\string_length_demo\main.cpp
+	<iostream>
+	<cstring>
+

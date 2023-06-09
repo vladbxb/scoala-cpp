@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1675759156 source:c:\users\vlad.preotesoiu\downloads\split_strings\main.cpp
+	<iostream>
+	<cctype>
+	<cstring>
+

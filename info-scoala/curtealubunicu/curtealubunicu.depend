@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1667380135 source:c:\users\vlad.preotesoiu\downloads\curtealubunicu\main.cpp
+	<iostream>
+	<cmath>
+	<iomanip>
+

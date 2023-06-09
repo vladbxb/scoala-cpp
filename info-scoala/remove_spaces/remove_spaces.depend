@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1675937222 source:c:\users\vlad.preotesoiu\downloads\remove_spaces\main.cpp
+	<iostream>
+	<cstring>
+	<cctype>
+
